@@ -1,0 +1,20 @@
+{
+  "anomalies": [
+    {
+      "actual": "e146b4a1da690750b965c82545831598cb2b2aede138d97b976c3bda45df3385",
+      "anomaly_number": 1,
+      "checkpoint_seq": null,
+      "entry_seq": 3,
+      "expected": "1b4ad0207b21f1724cac0f53104e65e1b946f28bfeb8f361b0a8832b4d444a3b",
+      "explanation": "Entry #3 stored hash does not match the recomputed hash from its fields. The entry content was modified after logging.",
+      "type": "MODIFIED"
+    }
+  ],
+  "checkpoints_checked": 1,
+  "entries_checked": 5,
+  "first_tamper_point": 3,
+  "overall_status": "FAIL \u274c",
+  "report_title": "Tamper-Evident Log \u2013 Integrity Verification Report",
+  "summary": "TAMPERING DETECTED. 1 anomalies found. Tamper types: MODIFIED. First affected entry: #3.",
+  "total_anomalies": 1
+}

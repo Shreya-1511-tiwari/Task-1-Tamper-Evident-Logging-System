@@ -1,0 +1,83 @@
+{
+  "anomalies": [
+    {
+      "actual": "2",
+      "anomaly_number": 1,
+      "checkpoint_seq": null,
+      "entry_seq": 1,
+      "expected": "1",
+      "explanation": "Expected sequence #1 but found #2. Entries appear to have been deleted between #1 and #2.",
+      "type": "DELETED"
+    },
+    {
+      "actual": "0d0bc503b408b405e9456f3765583e197eeeb277f1755e847adf1dfd6b387fdf",
+      "anomaly_number": 2,
+      "checkpoint_seq": null,
+      "entry_seq": 2,
+      "expected": "0000000000000000000000000000000000000000000000000000000000000000",
+      "explanation": "Entry #2 prev_hash does not match the hash of entry #1. The preceding entry was likely modified.",
+      "type": "MODIFIED"
+    },
+    {
+      "actual": "1",
+      "anomaly_number": 3,
+      "checkpoint_seq": null,
+      "entry_seq": 1,
+      "expected": "2",
+      "explanation": "Entry at position 2 has sequence #1 instead of #2. Entries may have been reordered.",
+      "type": "REORDERED"
+    },
+    {
+      "actual": "0000000000000000000000000000000000000000000000000000000000000000",
+      "anomaly_number": 4,
+      "checkpoint_seq": null,
+      "entry_seq": 1,
+      "expected": "c92085fd9831b055ee29871c0ba755e9207ba17ac347f05ae302f3c629d549f6",
+      "explanation": "Entry #1 prev_hash does not match the hash of entry #0. The preceding entry was likely modified.",
+      "type": "MODIFIED"
+    },
+    {
+      "actual": "c92085fd9831b055ee29871c0ba755e9207ba17ac347f05ae302f3c629d549f6",
+      "anomaly_number": 5,
+      "checkpoint_seq": null,
+      "entry_seq": 3,
+      "expected": "0d0bc503b408b405e9456f3765583e197eeeb277f1755e847adf1dfd6b387fdf",
+      "explanation": "Entry #3 prev_hash does not match the hash of entry #2. The preceding entry was likely modified.",
+      "type": "MODIFIED"
+    },
+    {
+      "actual": "de5b5cdf3f1844ee1d483d134dffe4f76af961c00fb56bd0c4ce54a361ef5794",
+      "anomaly_number": 6,
+      "checkpoint_seq": null,
+      "entry_seq": 3,
+      "expected": "424ff2560d92f3f1dee5951afd9507e0d41ae479d900d5a30729a5b860326f52",
+      "explanation": "Entry #3 stored hash does not match the recomputed hash from its fields. The entry content was modified after logging.",
+      "type": "MODIFIED"
+    },
+    {
+      "actual": "9ac4dbc5c523991a546a3d799980bfc119a2dcfea0a73f01d4f88a94013e970b",
+      "anomaly_number": 7,
+      "checkpoint_seq": 1,
+      "entry_seq": null,
+      "expected": "8fd437af56db4d2e092edc208a09a09c66c464e0f863a11af6007975d987e268",
+      "explanation": "Merkle root mismatch for checkpoint #1 (entries 1..5). One or more entries in this batch were tampered with.",
+      "type": "FORGED_CHECKPOINT"
+    },
+    {
+      "actual": "2026-04-01T21:07:54.153696+00:00",
+      "anomaly_number": 8,
+      "checkpoint_seq": null,
+      "entry_seq": 1,
+      "expected": ">= 2026-04-01T21:08:12.138937+00:00",
+      "explanation": "Entry #1 timestamp (2026-04-01T21:07:54.153696+00:00) is earlier than entry #2 (2026-04-01T21:08:12.138937+00:00). Entries may have been reordered.",
+      "type": "TIMESTAMP_NOT_MONOTONIC"
+    }
+  ],
+  "checkpoints_checked": 1,
+  "entries_checked": 5,
+  "first_tamper_point": 1,
+  "overall_status": "FAIL \u274c",
+  "report_title": "Tamper-Evident Log \u2013 Integrity Verification Report",
+  "summary": "TAMPERING DETECTED. 8 anomalies found. Tamper types: DELETED, FORGED_CHECKPOINT, MODIFIED, REORDERED, TIMESTAMP_NOT_MONOTONIC. First affected entry: #1.",
+  "total_anomalies": 8
+}

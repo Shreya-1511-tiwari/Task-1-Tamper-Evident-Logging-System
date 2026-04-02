@@ -1,0 +1,47 @@
+{
+  "anomalies": [
+    {
+      "actual": "4",
+      "anomaly_number": 1,
+      "checkpoint_seq": null,
+      "entry_seq": 3,
+      "expected": "3",
+      "explanation": "Expected sequence #3 but found #4. Entries appear to have been deleted between #3 and #4.",
+      "type": "DELETED"
+    },
+    {
+      "actual": "e146b4a1da690750b965c82545831598cb2b2aede138d97b976c3bda45df3385",
+      "anomaly_number": 2,
+      "checkpoint_seq": null,
+      "entry_seq": 4,
+      "expected": "6ac8346a0c3bf466f5f47193e43fbeb3d2b0e7090fb74be8335940a7d5952479",
+      "explanation": "Entry #4 prev_hash does not match the hash of entry #3. The preceding entry was likely modified.",
+      "type": "MODIFIED"
+    },
+    {
+      "actual": "5",
+      "anomaly_number": 3,
+      "checkpoint_seq": null,
+      "entry_seq": 4,
+      "expected": "4",
+      "explanation": "Expected sequence #4 but found #5. Entries appear to have been deleted between #4 and #5.",
+      "type": "DELETED"
+    },
+    {
+      "actual": "4",
+      "anomaly_number": 4,
+      "checkpoint_seq": 1,
+      "entry_seq": null,
+      "expected": "5",
+      "explanation": "Checkpoint #1 expected 5 entries (seq 1..5) but found 4. Entries may have been deleted.",
+      "type": "DELETED"
+    }
+  ],
+  "checkpoints_checked": 1,
+  "entries_checked": 4,
+  "first_tamper_point": 3,
+  "overall_status": "FAIL \u274c",
+  "report_title": "Tamper-Evident Log \u2013 Integrity Verification Report",
+  "summary": "TAMPERING DETECTED. 4 anomalies found. Tamper types: DELETED, MODIFIED. First affected entry: #3.",
+  "total_anomalies": 4
+}

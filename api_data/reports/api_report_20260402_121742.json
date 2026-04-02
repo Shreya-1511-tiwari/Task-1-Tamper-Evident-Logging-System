@@ -1,0 +1,10 @@
+{
+  "anomalies": [],
+  "checkpoints_checked": 1,
+  "entries_checked": 5,
+  "first_tamper_point": null,
+  "overall_status": "PASS \u2705",
+  "report_title": "Tamper-Evident Log \u2013 Integrity Verification Report",
+  "summary": "All integrity checks passed. The log chain is intact, Merkle roots are consistent, digital signatures are valid, and timestamps are properly ordered.",
+  "total_anomalies": 0
+}
